@@ -41,9 +41,8 @@ body {
 }
 
 .book {
-
-    
-   display: grid;
+    max-width: 120px;    
+    display: grid;
     justify-items: center;
     grid-template-rows: 1fr 1fr;    
     font-size: 14px;
@@ -61,6 +60,7 @@ body {
 } 
 
 .bookBG {
+    max-width: 120px;  
     background-color:  rgb(46, 46, 46);
     border: 2px solid black;
     border-left: 7px solid rgb(0, 0, 0);    
