@@ -14,11 +14,13 @@ body {
 }
 
 .bookArea {    
-    display: grid;   
-    max-width: 60vw;   
+    display: none;   
+    max-width: 90vw;
+    width: min-content;
+    height: min-content;  
     margin-left: auto;
     margin-right: auto; 
-    grid-template-columns: repeat(auto-fill, minmax(121px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(121px, 1fr));
     grid-auto-rows: auto;
     gap: 10px;
     padding: 10px;
@@ -68,9 +70,11 @@ body {
     border: 2px solid black;
     border-left: 7px solid rgb(0, 0, 0);    
     border-radius: 5px;
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 2 0px 3px rgb(43, 255, 0);
     margin: 0px;
     margin-bottom: 1px;
+
+
 }
 
 .bookForm {
@@ -86,7 +90,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     gap: 5px;
-    box-shadow: 10px 10px 10px black;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
 }
 
 input {
@@ -96,12 +100,28 @@ input {
 }
 
 .delButton{
+    color: white;
     margin-top: auto;
-    margin-bottom: 10px;
-    font-size: 12px;
+    margin-bottom: 5px;
+    font-size: 10px;
+    padding: 4px;
     width: fit-content;
     height: fit-content;
-    background-color: rgb(9, 218, 166);  
+    background-color: rgb(41, 0, 0);  
     border-radius: 15%;
+    border: none;
+}
+
+.readIt {
+    color: white;
+    margin-top: auto;
+    margin-bottom: 5px;
+    font-size: 10px;
+    padding: 4px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(3, 85, 60);  
+    border-radius: 15%; 
+    border: none;
 }
 
