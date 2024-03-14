@@ -5,15 +5,17 @@ const submit = document.querySelector(".submit");
 const bookContainer = document.querySelector(".bookArea");
 let divInstance = 0;
 
-function book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = function() {
-    return(title + " by " + author + ", " + pages + " pages, " + read);
+class library {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read; 
+    this.info = function() {
+      return(title + " by " + author + ", " + pages + " pages, " + read);
+    }
+    myLibrary.push(this);    
   }
-  myLibrary.push(this);    
 }
 
 function createUniqueID(target) {          
@@ -50,8 +52,7 @@ function populate() {
     document.querySelector(".bookArea").appendChild(newBG);
     newBG.appendChild(newDiv);
     newDiv.appendChild(newRead);   
-    newDiv.appendChild(newDel);
-    console.log(myLibrary.length);    
+    newDiv.appendChild(newDel);    
     newRead.addEventListener('click', readAbook);
     newDel.addEventListener('click', delBook);  
     divInstance++; 
@@ -65,13 +66,11 @@ function populate() {
   } else {
     bookContainer.style.display = "none";
   }
-  console.log(myLibrary);
 }
 
 function rePopulate() {
-      populate();
-     divInstance = 0;        
-  
+  divInstance = 0;  
+  populate();  
 }
 
 function submitBook() {
@@ -107,7 +106,7 @@ function delBook(buttonID) {
   rePopulate();
 }
 
-const riven = new book ("The Rise of Riverstone", "Mandy Schimelpfenig", 495, false);
+const riven = new library ("The Rise of Riverstone", "Mandy Schimelpfenig", 495, false);
 rePopulate();
 addButton.addEventListener("click", showForm);
 submit.addEventListener("click", submitBook);
